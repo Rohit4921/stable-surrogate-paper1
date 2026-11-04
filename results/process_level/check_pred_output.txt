@@ -1,0 +1,21 @@
+(1) TP with fixed nu vs GP: kernel, noise ratio, predictive scale, dof
+  gaussian   nu=   3: ell TP/GP=1.0000  (sn/sf) TP/GP=1.0000  max|mu diff|=1.1e-07  scale TP/GP: 1.0-1.0  dof=28  beta_TP=8.333 vs n(nu-2)/nu=8.333
+  gaussian   nu=   5: ell TP/GP=1.0000  (sn/sf) TP/GP=1.0000  max|mu diff|=2.2e-07  scale TP/GP: 1.0-1.0  dof=30  beta_TP=15.000 vs n(nu-2)/nu=15.000
+  gaussian   nu=  20: ell TP/GP=1.0000  (sn/sf) TP/GP=1.0000  max|mu diff|=8.9e-08  scale TP/GP: 1.0-1.0  dof=45  beta_TP=22.500 vs n(nu-2)/nu=22.500
+  t1.5 noise nu=   3: ell TP/GP=1.0000  (sn/sf) TP/GP=1.0000  max|mu diff|=2.0e-07  scale TP/GP: 1.0-1.0  dof=28  beta_TP=8.333 vs n(nu-2)/nu=8.333
+  t1.5 noise nu=   5: ell TP/GP=1.0000  (sn/sf) TP/GP=1.0000  max|mu diff|=2.0e-07  scale TP/GP: 1.0-1.0  dof=30  beta_TP=15.000 vs n(nu-2)/nu=15.000
+  t1.5 noise nu=  20: ell TP/GP=1.0000  (sn/sf) TP/GP=1.0000  max|mu diff|=1.9e-08  scale TP/GP: 1.0-1.0  dof=45  beta_TP=22.500 vs n(nu-2)/nu=22.500
+
+(2) s -> M_n(alpha, s) for positive (alpha/2)-stable mixing: number of local maxima on a fine log-s grid
+  n= 10  a=0.6: 1 max at log s=-1.42; a=1.0: 1 max at log s=-1.62; a=1.3: 1 max at log s=-1.77; a=1.6: 2 max at log s=-2.00; a=1.9: 2 max at log s=-2.22
+  n= 25  a=0.6: 1 max at log s=-2.32; a=1.0: 1 max at log s=-2.52; a=1.3: 1 max at log s=-2.65; a=1.6: 2 max at log s=-2.88; a=1.9: 4 max at log s=-3.12
+  n=100  a=0.6: 3 max at log s=-3.90; a=1.0: 2 max at log s=-3.90; a=1.3: 3 max at log s=-4.02; a=1.6: 4 max at log s=-4.20; a=1.9: 7 max at log s=-4.50
+
+(3) unimodality of the density of log S, S positive beta-stable (beta = alpha/2)
+  beta=0.3: sign changes of smoothed histogram slope = 1
+  beta=0.5: sign changes of smoothed histogram slope = 1
+  beta=0.55: sign changes of smoothed histogram slope = 1
+  beta=0.65: sign changes of smoothed histogram slope = 1
+  beta=0.75: sign changes of smoothed histogram slope = 1
+  beta=0.85: sign changes of smoothed histogram slope = 1
+  beta=0.95: sign changes of smoothed histogram slope = 1

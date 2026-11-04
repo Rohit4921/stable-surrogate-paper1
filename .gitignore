@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+# compiled C kernel: built from src/ssm_kernel.c on first import, for the user's own platform
+*.so
+*.dll
+*.pyd
+# NIFTY 50 prices: not redistributable; download with scripts/get_nifty50.py
+data/nifty50_daily_open_close.csv
+# LaTeX builds
+paper/build_*/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.bbl
+paper/main.pdf
+paper/supplement.pdf

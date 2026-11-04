@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article in preferred-citation."
+type: software
+title: "Heavy tails in Gaussian-process surrogates: code, data and results"
+version: 1.0.0
+license: MIT
+authors:
+  - family-names: Upadhye
+    given-names: Neelesh S.
+    affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
+  - family-names: Mani
+    given-names: Rohit Kumar
+    affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
+    orcid: "https://orcid.org/0009-0003-8325-0258"
+keywords:
+  - Gaussian process
+  - Student-t process
+  - symmetric alpha-stable noise
+  - heavy tails
+  - Laplace approximation
+  - Bayesian optimization
+preferred-citation:
+  type: article
+  title: "Heavy tails in Gaussian-process surrogates: process-level profiling degeneracy versus observation-level identifiability"
+  authors:
+    - family-names: Upadhye
+      given-names: Neelesh S.
+      affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
+    - family-names: Mani
+      given-names: Rohit Kumar
+      affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
+      orcid: "https://orcid.org/0009-0003-8325-0258"
+  journal: "Statistica Sinica"
+  status: submitted
+  year: 2026

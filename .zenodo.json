@@ -1,0 +1,26 @@
+{
+  "title": "Heavy tails in Gaussian-process surrogates: code, data and results",
+  "upload_type": "software",
+  "description": "Python code, stored per-replicate results and a smoke test that reproduce all simulations, tables and figures of N. S. Upadhye and R. K. Mani, 'Heavy tails in Gaussian-process surrogates: process-level profiling degeneracy versus observation-level identifiability' (submitted to Statistica Sinica). Supported by the Anusandhan National Research Foundation (ANRF), Government of India, under its ARG-MATRICS scheme (grant ANRF/ARGM/2025/000532/MTR).",
+  "creators": [
+    {
+      "name": "Upadhye, Neelesh S.",
+      "affiliation": "Department of Mathematics, Indian Institute of Technology Madras"
+    },
+    {
+      "name": "Mani, Rohit Kumar",
+      "affiliation": "Department of Mathematics, Indian Institute of Technology Madras",
+      "orcid": "0009-0003-8325-0258"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "Gaussian process",
+    "Student-t process",
+    "symmetric alpha-stable noise",
+    "heavy tails",
+    "Laplace approximation",
+    "Bayesian optimization"
+  ]
+}

@@ -8,6 +8,7 @@ authors:
   - family-names: Upadhye
     given-names: Neelesh S.
     affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
+    orcid: "https://orcid.org/0000-0003-0537-4928"
   - family-names: Mani
     given-names: Rohit Kumar
     affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
@@ -26,6 +27,7 @@ preferred-citation:
     - family-names: Upadhye
       given-names: Neelesh S.
       affiliation: "Department of Mathematics, Indian Institute of Technology Madras"
+      orcid: "https://orcid.org/0000-0003-0537-4928"
     - family-names: Mani
       given-names: Rohit Kumar
       affiliation: "Department of Mathematics, Indian Institute of Technology Madras"

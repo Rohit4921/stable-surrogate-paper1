@@ -34,4 +34,9 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0003-8325-0258"
   journal: "Statistica Sinica"
   status: submitted
+  url: "https://arxiv.org/abs/2611.11188"
+  identifiers:
+    - type: other
+      value: "arXiv:2611.11188"
+      description: "arXiv preprint"
   year: 2026

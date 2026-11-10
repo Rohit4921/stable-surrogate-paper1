@@ -3,7 +3,8 @@
 Code, stored results and a smoke test for
 
 > N. S. Upadhye and R. K. Mani. *Heavy tails in Gaussian-process surrogates: process-level profiling degeneracy
-> versus observation-level identifiability.* Submitted to *Statistica Sinica*.
+> versus observation-level identifiability.* Submitted to *Statistica Sinica*. Preprint:
+> [arXiv:2611.11188](https://arxiv.org/abs/2611.11188).
 
 Every simulation, table and figure of the article can be regenerated with the scripts here. The per-replicate results of
 every study are stored, so the tables can be checked without rerunning the long simulations.
@@ -211,4 +212,4 @@ density tables (`data/sas_tables.npz`) are released under the Creative Commons A
 
 ## Citation
 
-If you use this code, please cite the article above. Citation metadata for this software are in `CITATION.cff`.
+If you use this code, please cite the article above (arXiv:2611.11188 until it is published). Citation metadata for this software are in `CITATION.cff`.

@@ -23,5 +23,12 @@
     "heavy tails",
     "Laplace approximation",
     "Bayesian optimization"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "arXiv:2611.11188",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-preprint"
+    }
   ]
 }

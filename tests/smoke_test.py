@@ -124,10 +124,15 @@ refit_check("odd-window median pilot reproduces stored alpha-hat (n = 480, k = 1
 
 # 5 and 6 in a fresh copy of the package
 tmp = tempfile.mkdtemp(); pkg = os.path.join(tmp, "pkg")
-shutil.copytree(ROOT, pkg, ignore=shutil.ignore_patterns("__pycache__"))
+shutil.copytree(ROOT, pkg, ignore=shutil.ignore_patterns("__pycache__", ".git"))
 env = dict(os.environ, OMP_NUM_THREADS="1", BO_NIT="2")
+SUBPROCESS_TIMEOUT = 1800   # seconds; a child that exceeds it is killed and the check fails (the suite cannot stall)
 def run(script, *args):
-    p = subprocess.run([sys.executable, os.path.join(pkg, "scripts", script), *args], env=env, capture_output=True, text=True)
+    try:
+        p = subprocess.run([sys.executable, os.path.join(pkg, "scripts", script), *args], env=env, capture_output=True,
+                           text=True, timeout=SUBPROCESS_TIMEOUT)
+    except subprocess.TimeoutExpired:
+        return 124, f"TIMEOUT after {SUBPROCESS_TIMEOUT} s: {script} {' '.join(args)}"
     return p.returncode, p.stdout + p.stderr
 code, out = run("04_bo/bo_study.py", "sas13", "0", "smoketest", "GP,SaS")
 res = json.load(open(os.path.join(pkg, "results/bo/bo_sas13_smoketest.json"))) if code == 0 else []
@@ -185,7 +190,10 @@ check("CVaR_0.9 = mean of the worst 10% (tied cut-off)", abs(Sb["problems"]["out
       f"(stored {Sb['problems']['outliers']['surrogates']['GP']['cvar90']:.6f}, worst-10% {fin[:len(fin) // 10].mean():.6f}, runs >= quantile {nq})")
 code, out = run("04_bo/make_table_bo.py")
 check("make_table_bo.py regenerates paper/tab_bo_a.tex", code == 0 and open(os.path.join(pkg, "paper", "tab_bo_a.tex")).read() == open(os.path.join(ROOT, "paper", "tab_bo_a.tex")).read(), out[-300:] if code else "")
-shutil.rmtree(tmp)
+def _force_rm(func, path, exc):   # Windows: read-only files cannot be unlinked until made writable
+    try: os.chmod(path, 0o700); func(path)
+    except OSError: pass
+shutil.rmtree(tmp, onexc=_force_rm) if sys.version_info >= (3, 12) else shutil.rmtree(tmp, onerror=lambda f, p, e: _force_rm(f, p, e))
 import ssm_laplace as _S
 print(f"\nO(n) Laplace kernel used: {_S.BACKEND}")
 if ok and n_platform:

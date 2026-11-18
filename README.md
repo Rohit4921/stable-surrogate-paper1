@@ -16,7 +16,7 @@ ARG-MATRICS scheme (grant ANRF/ARGM/2025/000532/MTR).
 
 ```bash
 pip install -r requirements.txt      # numpy, scipy, pandas, matplotlib (versions of the stored results)
-python tests/smoke_test.py           # 34 checks, about 10 minutes on one core
+python tests/smoke_test.py           # 34 checks, about 10 minutes on one core (15 with the pure-Python kernel)
 ```
 
 On a newer Python for which those exact versions are not available, `pip install numpy scipy pandas matplotlib`
@@ -39,7 +39,9 @@ The smoke test checks, among other things, that
 - the summary scripts regenerate every stored summary table exactly, and the table generators regenerate the
   table bodies in `paper/`.
 
-It ends with `ALL PASSED`, and prints which Laplace kernel (C or Python) was used.
+It ends with `ALL PASSED`, and prints which Laplace kernel (C or Python) was used. Every subprocess the test starts is
+bounded by a 30-minute timeout (a hung child fails its check instead of stalling the suite), and the temporary copy
+of the package excludes `.git` and is removed on every platform, including Windows.
 
 ## Reproducing on other platforms
 
@@ -202,6 +204,9 @@ without it.
   test passes with both the C and the pure-Python kernel, all refits exact.
 - Windows x64, Python 3.14, NumPy 2.5.3, pandas 3.0.5, no C compiler (pure-Python kernel): smoke test passes, two
   refits `[PASS*]` (see *Reproducing on other platforms*).
+- Windows 11 x64, Python 3.13.7, NumPy 2.4.2, SciPy 1.17.1, pandas 3.0.2, Matplotlib 3.11.2, no C compiler (pure-Python
+  kernel), 18 November 2026: all 34 checks pass (exit code 0, about 15 minutes); two refits `[PASS*]`, with differences of
+  2.9e-5 (unified Laplace-ML) and 6.7e-6 (GP-pilot cross-fit); all other refits agree to better than 1e-12.
 
 ## Licence
 
